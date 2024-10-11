@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  reporter: process.env.CI ? 'github' : 'list',
+  reporter: 'list',
   workers: 1,
   testDir: './__tests__',
   outputDir: './tmp/artifacts',
