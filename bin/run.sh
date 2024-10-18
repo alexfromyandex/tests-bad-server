@@ -8,6 +8,9 @@ echo "ЗАГРУЖАЕМ ИЗОБРАЖЕНИЯ ДЛЯ ТЕСТОВ"
 curl -o $DIR_TESTS/data/bimage.png https://getsamplefiles.com/download/png/sample-1.png
 curl -o $DIR_TESTS/data/mimage.png https://getsamplefiles.com/download/png/sample-2.png
 
+echo "ЗАПУСК ДРУГОГО СКРИПТА"
+sh ./start_project.sh
+
 echo "ЗАПУСК ТЕСТОВ"
 cd $DIR_TESTS || exit
 npm run test
