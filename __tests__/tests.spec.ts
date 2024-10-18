@@ -151,10 +151,13 @@ test.describe('Проверка загрузки файлов', () => {
       }
     });
     const data = await response.json();
-    const uploadedFileName = path.basename(data.fileName ?? '');
-    const localFileName = path.basename(imagePath);
-    expect(uploadedFileName).not.toEqual(localFileName);
     expect(response.ok()).toBeTruthy();
+    expect(data.fileName).toBeDefined();
+
+    const uploadedFileName = path.basename(data.fileName);
+    const localFileName = path.basename(imagePath);
+
+    expect(uploadedFileName).not.toEqual(localFileName);
   });
 
   test('Размер файлов должен быть лимитирован по минимуму (больше 2kb)', async ({ request }) => {
