@@ -151,6 +151,7 @@ test.describe('Проверка загрузки файлов', () => {
       }
     });
     const data = await response.json();
+    console.log({ data, responseState: response.ok() });
     expect(response.ok()).toBeTruthy();
     expect(data.fileName).toBeDefined();
 
